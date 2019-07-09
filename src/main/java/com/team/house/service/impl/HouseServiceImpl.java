@@ -62,7 +62,7 @@ public class HouseServiceImpl implements HouseService {
         PageHelper.startPage(page.getPage(),page.getRows());
         //查询所有
         List<House> list=houseMapper.getHouseByIsPass(ispass);
-        return new PageInfo<>(list);
+        return new PageInfo<House>(list);
     }
 
     @Override
@@ -82,7 +82,7 @@ public class HouseServiceImpl implements HouseService {
          //将查询条件传递给dao层
          List<House> list=houseMapper.getBorswerHouse(condition);
 
-         PageInfo<House> pageInfo=new PageInfo<>(list);
+         PageInfo<House> pageInfo=new PageInfo<House>(list);
         return pageInfo;
     }
 }
